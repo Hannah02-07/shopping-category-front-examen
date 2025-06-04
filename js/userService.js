@@ -165,10 +165,7 @@ function createUser(){
                        <form id="formCreateUser">
                            <div class="row">
                             <div class="col">
-                                <input type="text" class="form-control" id="first_name" placeholder="First name" aria-label="First name" required>
-                            </div>
-                            <div class="col">
-                                <input type="text" class="form-control" id="last_name" placeholder="Last name" aria-label="Last name" required>
+                                <input type="text" class="form-control" id="name" placeholder=" name" aria-label=" name" required>
                             </div>
                             </div> 
                              <div class="row mt-3">
@@ -177,6 +174,9 @@ function createUser(){
                             </div>
                             <div class="col">
                                 <input type="password" class="form-control" id="password" placeholder="Password" aria-label="Password" required>
+                            </div>
+                            <div class="col">
+                                <img src="${user.image}" class="card-img-top" id="img" alt="Avatar del usuario">
                             </div>
                             </div> 
                              <div class="row mt-3">
@@ -212,11 +212,11 @@ function createUser(){
 function saveUser(){
     const form= document.getElementById('formCreateUser')
     if(form.checkValidity()){
-        const first_name=document.getElementById('first_name').value
-        const last_name=document.getElementById('last_name').value
+        const name=document.getElementById('name').value
         const email=document.getElementById('email').value
         const password=document.getElementById('password').value
-        const user={first_name,last_name,email,password}
+        const avatar=document.getElementById('img').value
+        const user={name,email,password,avatar}
         const PLATZI_ENDPOINT ='https://fakeapi.platzi.com/en/rest/users/#create-a-user'
     fetch(PLATZI_ENDPOINT,{
 
