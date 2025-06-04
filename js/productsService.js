@@ -166,10 +166,10 @@ function createProduct(){
                        <form id="formCreateProduct">
                            <div class="row">
                             <div class="col">
-                                <input type="text" class="form-control" id="title_product" placeholder="Title product" aria-label="Title product" required>
+                                <input type="text" class="form-control" id="title_product" placeholder="Titulo del producto" aria-label="Title product" required>
                             </div>
                             <div class="col">
-                                <input type="text" class="form-control" id="price" placeholder=" price" aria-label=" price" required>
+                                <input type="text" class="form-control" id="price" placeholder=" precio" aria-label=" price" required>
                             </div>
                             </div> 
                              <div class="row mt-3">
@@ -177,8 +177,16 @@ function createProduct(){
                                 <input type="text" class="form-control" id="description" placeholder="Description " aria-label="Description" required>
                             </div>
                             <div class="col">
-                                <input type="text" class="categoryId" id="categoryId" placeholder="categoryId" aria-label="categoryId" required>
+                                <input type="text" class="form-control" id="categoryId" placeholder="ID de la categoria" aria-label="categoryId" required>
                             </div>
+                             <div class="row mt-3">
+                              <div class="col">
+                            
+                                <input type="url" class="form-control" id="image" placeholder="https://ejemplo.com" aria-label="image" required>
+                            </div>
+                            </div>
+                           
+                            
                             
                             </div> 
                              <div class="row mt-3">
@@ -218,8 +226,9 @@ function saveProduct(){
         const price=document.getElementById('price').value
         const description=document.getElementById('description').value
         const categoryId=document.getElementById('categoryId').value
-        const product={title_product,price,description,categoryId}
-        const PLATZI_ENDPOINT ='https://fakeapi.platzi.com/en/rest/products/#create-a-product'
+        const image=document.getElementById('image').value
+        const product={title_product,price,description,categoryId,image}
+        const PLATZI_ENDPOINT ='https://api.escuelajs.co/api/v1/products/'
     fetch(PLATZI_ENDPOINT,{
 
         method:'POST',

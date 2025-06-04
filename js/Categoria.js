@@ -151,7 +151,7 @@ function getCategories(idCategories){
 
 }
 function createCategories(){
-    const modalProduct=`
+    const modalCategories=`
     <div class="modal fade" id="modalCategories" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -169,8 +169,11 @@ function createCategories(){
                             <div class="col">
                                 <input type="text" class="form-control" id="name" placeholder="Nombre de la categoria" aria-label="Nombre de la categoria" required>
                             </div>
-                            <div class="col">
-                               
+                             <div class="row mt-3">
+                              <div class="col">
+                            
+                                <input type="url" class="form-control" id="image" placeholder="https://ejemplo.com" aria-label="image" required>
+                            </div>
                             </div>
                             </div> 
                             
@@ -211,7 +214,7 @@ function saveCategories(){
         const image=document.getElementById('image').value
         
         const categories={name,image}
-        const PLATZI_ENDPOINT ='https://fakeapi.platzi.com/en/rest/categories/#create-a-category'
+        const PLATZI_ENDPOINT ='https://api.escuelajs.co/api/v1/categories/'
     fetch(PLATZI_ENDPOINT,{
 
         method:'POST',

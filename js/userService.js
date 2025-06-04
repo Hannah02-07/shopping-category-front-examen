@@ -175,13 +175,12 @@ function createUser(){
                             <div class="col">
                                 <input type="password" class="form-control" id="password" placeholder="Password" aria-label="Password" required>
                             </div>
-                            <div class="col">
-                                <img src="${user.image}" class="card-img-top" id="img" alt="Avatar del usuario">
-                            </div>
-                            </div> 
+                            
                              <div class="row mt-3">
-                            <div class="col">
-                                <button type="button" class="btn btn-success" onclick="saveUser()" >Guardar</button>
+                              <div class="col">
+                            
+                                <input type="url" class="form-control" id="image" placeholder="https://ejemplo.com" aria-label="image" required>
+                            </div>
                             </div>
                             
                             </div>            
@@ -215,9 +214,9 @@ function saveUser(){
         const name=document.getElementById('name').value
         const email=document.getElementById('email').value
         const password=document.getElementById('password').value
-        const avatar=document.getElementById('img').value
-        const user={name,email,password,avatar}
-        const PLATZI_ENDPOINT ='https://fakeapi.platzi.com/en/rest/users/#create-a-user'
+        const image=document.getElementById('image').value
+        const user={name,email,password,image}
+        const PLATZI_ENDPOINT ='https://api.escuelajs.co/api/v1/users/'
     fetch(PLATZI_ENDPOINT,{
 
         method:'POST',

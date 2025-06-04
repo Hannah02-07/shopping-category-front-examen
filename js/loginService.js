@@ -26,7 +26,7 @@ function login(email, password){
     })
 
     .then((response) =>{
-        if(response.status===200){
+        if(response.status===201){
 
            
             alertType= 'success'
@@ -34,7 +34,7 @@ function login(email, password){
             alertBuilder(alertType,message)
             localStorage.setItem('token','jaiuhn9283kiij92jm')
             setTimeout(()=>{
-                location.href='admin/dashBoard.html'
+                location.href='admin/dashboard.html'
 
             },2000)//2000ms=2s
 
