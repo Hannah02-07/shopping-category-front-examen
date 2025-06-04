@@ -118,7 +118,7 @@ function getUser(idUser){
                 <div class="modal-body">
                    
                     <div class="card" " >
-                        <img src="${user.image}" class="card-img-top" alt="Avatar del usuario">
+                        <img src="${element.image}" class="card-img-top" alt="Avatar del usuario">
                         <div class="card-body">
                             <h5 class="card-title">Informacion del usuario: </h5>
                             <p class="card-text">Nombre: ${user.name} </p>
